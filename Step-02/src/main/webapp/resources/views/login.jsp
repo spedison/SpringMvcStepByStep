@@ -1,8 +1,1 @@
-<html>
-<head>
-<title>Yahoo!!</title>
-</head>
-<body>
-Minha Primeira JSP!!! Será ????
-</body>
-</html>
+<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%><!DOCTYPE html><html>    <head>        <title>Yahoo!!</title>        <meta charset="UTF-8">    </head>    <body>        <form action="login.do" method="post">            <p>${message}</p>            <div>            <p>Usuário : <input type="text" id="name" name="name" value="${name}"></p>            <p>Senha: <input type="password" id="password" name="password"></p>            <p><input type="submit"></p>            </div>        <form>    </body></html>

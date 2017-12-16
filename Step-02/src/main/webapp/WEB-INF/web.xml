@@ -5,8 +5,6 @@
 
     <display-name>To do List</display-name>
 
-    <icon>/resouces/images/icone.gif</icon>
-
     <welcome-file-list>
         <welcome-file>login.do</welcome-file>
     </welcome-file-list>

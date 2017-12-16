@@ -21,6 +21,8 @@ public class Erro404Servlet extends HttpServlet {
         req.setAttribute("errorType", throwable);
         req.setAttribute("statusCode", statusCode);
 
+        System.out.print("IP da Máquina: " + req.getLocalAddr() + " - " + req.getRemoteHost() + " - User : " + req.getRemoteUser()  + " - " + req.getAttribute("javax.servlet.error.request_uri"));
+
         //colocando o setStatus OK
         res.setStatus(HttpServletResponse.SC_OK);
 

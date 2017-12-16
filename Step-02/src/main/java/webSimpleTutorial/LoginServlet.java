@@ -1,6 +1,8 @@
 package webSimpleTutorial;
 
 
+import service.ValidationPassword;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -33,10 +35,31 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/login.do", loadOnStartup = 1)
 public class LoginServlet extends HttpServlet {
 
+    private static long contador = 0;
+    private ValidationPassword validationPassword = new ValidationPassword();
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        System.out.println(request.getParameter("name"));
+        String name = request.getParameter("name");
+        String password = request.getParameter("password");
+
+        if(validationPassword.isValidPassword(name, password)) {
+            request.setAttribute("name", name);
+            request.getRequestDispatcher("/resources/views/welcome.jsp").forward(request, response);
+        }else
+        {
+            request.setAttribute("message", "Erro ao realizar o login.");
+            request.setAttribute("name", name);
+            request.getRequestDispatcher("/resources/views/login.jsp").forward(request, response);
+        }
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.getRequestDispatcher("/resources/views/login.jsp").forward(request, response);
     }
+
 
     public LoginServlet(){
         System.out.println("Iniciado ...");
