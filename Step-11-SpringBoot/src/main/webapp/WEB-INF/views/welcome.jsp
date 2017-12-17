@@ -1,1 +1,0 @@
-<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%><!DOCTYPE html><html>    <head>        <title>Yahoo!!</title>        <meta charset="UTF-8">    </head>    <body>        <p>Muito Bem Vindo ${name} !! </p>        <p>Sua Sessão é ${session}</p>        <p>Sem erros de acentuação !@#</p>    </body></html>
