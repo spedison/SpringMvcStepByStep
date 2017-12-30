@@ -4,6 +4,7 @@ package com.spedison.course.controler;
 import com.spedison.course.helper.SpringHttpHelper;
 import com.spedison.course.service.ValidationPassword;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -79,4 +80,12 @@ public class LoginControler {
     public LoginControler(){
         System.out.println("Iniciado ...");
     }
+
+
+    @RequestMapping(value = "/error", method = {RequestMethod.POST, RequestMethod.GET})
+    @ResponseBody
+    public String error(){
+        return "erro404";
+    }
+
 }
